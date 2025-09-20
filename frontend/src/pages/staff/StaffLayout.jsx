@@ -3,6 +3,8 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import bgImage from '../../assets/s-bg.jpg';
 
+
+
 export default function StaffLayout() {
   return (
     <div
