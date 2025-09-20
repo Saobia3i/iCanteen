@@ -179,6 +179,3 @@ Saobia Islam — Full-stack Developer (Laravel + React)
 This project is licensed under the MIT License.
 
 
----
-
-👉 Do you want me to also add **screenshots / demo GIF sections** in the README (UI previews), so your GitHub repo looks more professional?
