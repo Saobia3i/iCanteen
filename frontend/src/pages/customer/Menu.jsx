@@ -4,7 +4,7 @@ import { Drawer, Button, Badge, message } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import api from "../../lib/api";
 import MenuItems from "./MenuItems";
-
+import BackButton from "../../components/BackButton"; 
 import burger from "../../assets/burger.jpg";
 import fries from "../../assets/Fries.jpg";
 import pizza from "../../assets/pizza.jpg";
@@ -73,6 +73,7 @@ export default function Menu() {
       }}
     >
       <div className="py-12 px-4 lg:px-20">
+        <BackButton />
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-3xl lg:text-4xl font-extrabold text-[#212121]">Menu Items</h2>
 

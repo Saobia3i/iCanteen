@@ -10,7 +10,7 @@ import {
   LocalShipping, Inventory2
 } from '@mui/icons-material';
 import api from '../../lib/api';
-
+import BackButton from '../../components/BackButton';
 export default function Order() {
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
@@ -88,6 +88,10 @@ export default function Order() {
     >
       {/* Stats */}
       <Box display="flex" gap={2} flexWrap="wrap" justifyContent="center">
+        {/* Back button */}
+      <div className="absolute top-4 left-4 z-20">
+        <BackButton />
+      </div>
         <Card sx={{ width: 250, border: '1px solid #2196f3' }}>
           <CardContent sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
             <Box sx={{ width: 48, height: 48, backgroundColor: '#2196f3', borderRadius: 2, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>

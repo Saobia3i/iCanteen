@@ -8,6 +8,7 @@ import StaffHome from "./pages/staff/StaffHome";
 import Order from "./pages/staff/Order";
 import Shifts from "./pages/staff/Shifts";
 
+
 import CustomerProfile from "./pages/customer/Profile";
 import StaffProfile from "./pages/staff/Profile";
 
@@ -18,8 +19,10 @@ import Register from "./auth/Register.jsx";
 // Shared UI
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
+import BackButton from "../../components/BackButton"; 
 import Menu from "./pages/customer/Menu";
+import AboutUs from "./pages/customer/AboutUs";
+import Contact from "./pages/customer/Contact";
 
 // --- tiny helper to hide chrome on auth routes (no route changes) ---
 const AUTH_PREFIXES = ["/login", "/register", "/auth"];
@@ -49,7 +52,9 @@ function AppShell() {
           {/* Customer */}
           <Route path="/customer" element={<CustomerHome />} />
           <Route path="/customer/profile" element={<CustomerProfile />} />
-          <Route path="/menu" element={<Menu />} /> {/* <-- SAFE */}
+          <Route path="menu" element={<Menu />} /> {/* <-- SAFE */}
+          <Route path="about-us" element={<AboutUs />} />
+          <Route path="contact" element={<Contact />} />
 
           {/* Staff (nested) */}
           <Route path="/staff" element={<StaffLayout />}>

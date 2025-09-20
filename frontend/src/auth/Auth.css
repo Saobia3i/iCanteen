@@ -32,6 +32,30 @@ html[data-theme="dark"] {
   color: var(--auth-text);
   font-family: 'Arial', sans-serif;
 }
+/* Logo + Brand heading */
+.auth-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.auth-brand img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;                  /* চাইলে বাদ দিতে পারো */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  margin-bottom: 0.5rem;
+  border: 3px solid #111;               /* <-- কালো border */
+}
+
+.auth-brand h2 {
+  font-size: 2rem;      /* বড় লেখা */
+  font-weight: 900;
+  margin: 0;
+  color: var(--auth-text);
+}
 
 /* Decorative Panel (brand gradient) */
 .auth-decorative-panel {

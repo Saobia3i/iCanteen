@@ -17,7 +17,7 @@ import {
   Chip,
 } from "@mui/material";
 import staffLogo from "../../assets/logo.png"; // profile placeholder
-
+import BackButton from "../../components/BackButton";
 export default function Profile({ userId }) {
   // State for profile
   const [profile, setProfile] = useState({
@@ -69,6 +69,11 @@ export default function Profile({ userId }) {
 
   return (
     <Box sx={{ mt: 2, mb: 6 }}>
+      {/* Back button */}
+            <div className="absolute top-4 left-4 z-20">
+              <BackButton />
+            </div>
+      
       <Typography variant="h5" sx={{ mb: 3 }}>
         My Profile
       </Typography>

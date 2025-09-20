@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, Avatar, Badge, Button, Select, Space, Typography, Row, Col } from 'antd';
 import { ClockCircleOutlined, UserOutlined, CalendarOutlined, EnvironmentOutlined } from '@ant-design/icons';
-
+import BackButton from '../../components/BackButton';
 const { Title, Text } = Typography;
 const { Option } = Select;
 
@@ -46,6 +46,7 @@ export default function Shift() {
     <div style={{ padding: '24px', background: '#f5f5f5' }}>
       {/* Header */}
       <Card style={{ marginBottom: '24px', background: 'linear-gradient(to right, #FACC15, #F59E0B)', border: '2px solid #D97706' }}>
+        <BackButton />
         <Title level={3} style={{ color: '#000' }}>🕒 Shift Management</Title>
         <Text style={{ color: '#000000cc', fontSize: '16px' }}>View and manage all staff shifts and assignments</Text>
       </Card>

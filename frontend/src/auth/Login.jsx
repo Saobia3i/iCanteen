@@ -2,8 +2,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Auth.css";
+import logo from "../assets/logo.png";
 
-// ⚠️ path ঠিক করো: pages/auth থেকে lib এ যেতে দুই লেভেল আপ
 import { loginUser } from "../lib/auth";
 
 export default function Login() {
@@ -49,6 +49,10 @@ export default function Login() {
       {/* Decorative panel (unchanged) */}
       <div className="auth-decorative-panel">
         <div className="auth-content">
+            <div className="auth-brand">
+              <img src={logo} alt="iCanteen Logo" />
+              <h2>iCanteen</h2>
+            </div>
           <h1>Welcome Back!</h1>
           <p>Log in to continue managing your canteen experience.</p>
         </div>
@@ -57,6 +61,7 @@ export default function Login() {
       {/* Form panel (unchanged UI) */}
       <div className="auth-form-panel">
         <div className="auth-card">
+           
           <h2 className="auth-title">Login</h2>
 
           {err && (

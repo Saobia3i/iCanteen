@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Auth.css";
+import logo from "../assets/logo.png";
 
 // ⚠️ path ঠিক করো: src/auth → lib এ যেতে এক লেভেল আপ
 import { registerUser } from "../lib/auth";
@@ -56,6 +57,10 @@ export default function Register() {
     <div className="auth-page">
       <div className="auth-decorative-panel">
         <div className="auth-content">
+          <div className="auth-brand">
+            <img src={logo} alt="iCanteen Logo" />
+            <h2>iCanteen</h2>
+          </div>
           <h1>Join Us!</h1>
           <p>Create your account to enjoy our canteen services.</p>
         </div>
@@ -63,6 +68,7 @@ export default function Register() {
 
       <div className="auth-form-panel">
         <div className="auth-card">
+           
           <h2 className="auth-title">Register</h2>
 
           {err && <p style={{ color:"red", textAlign:"center" }}>{err}</p>}

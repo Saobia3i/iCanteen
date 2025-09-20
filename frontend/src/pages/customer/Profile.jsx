@@ -20,7 +20,8 @@ import {
 } from "@mui/material";
 import { Visibility, VisibilityOff, Save, Edit, Refresh, Email, BadgeOutlined } from "@mui/icons-material";
 import api from "../../lib/api";
-import bg from "../../assets/foodiebg.jpg"; // <-- your background
+import bg from "../../assets/foodiebg.jpg"; 
+import BackButton from "../../components/BackButton"; // <-- your background
 // brand colors come from CSS vars you set earlier: --brand, --brand-600, --btn-fg
 
 export default function Profile() {
@@ -100,8 +101,11 @@ export default function Profile() {
         <BgLayer />
 
         <Container maxWidth="md" sx={{ py: 6, position: "relative", zIndex: 1 }}>
+          
           <Card sx={{ borderRadius: 3, overflow: "hidden" }}>
             <Box sx={{ height: 4, bgcolor: "divider", position: "relative" }}>
+              {/* Back button */}
+      
               <Box
                 sx={{
                   position: "absolute",
@@ -151,6 +155,7 @@ export default function Profile() {
       <Box sx={{ position: "relative", minHeight: "100vh" }}>
         <BgLayer />
         <Container maxWidth="sm" sx={{ py: 6, position: "relative", zIndex: 1 }}>
+          
           <Alert severity="error" sx={{ borderRadius: 2 }}>
             {err}
           </Alert>
@@ -166,6 +171,9 @@ export default function Profile() {
 
       {/* Foreground content */}
       <Container maxWidth="md" sx={{ py: 6, position: "relative", zIndex: 1 }}>
+                <div className="absolute top-4 left-4 z-20">
+                <BackButton />
+              </div>
         <Card
           sx={{
             borderRadius: 3,

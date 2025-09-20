@@ -1,7 +1,8 @@
 // src/pages/customer/CustomerHome.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import Contact from "./Contact";
+import AboutUs from "./AboutUs";
 import { Drawer, Button, Menu } from "antd";
 import {
   MenuOutlined,
@@ -31,13 +32,16 @@ const CustomerHome = () => {
   const showDrawer = () => setVisible(true);
   const onClose = () => setVisible(false);
 
+  // replace your onMenuClick with this:
   const onMenuClick = (e) => {
-    if (e.key === "home") navigate("/customer");
-    if (e.key === "menu-items") navigate("/Menu"); // <-- Menu Items -> /menu
-    if (e.key === "profile") navigate("/customer/Profile"); // later real profile
-    // specials/about/contact future
-    setVisible(false);
-  };
+      if (e.key === "home") navigate("/customer");
+      if (e.key === "menu-items") navigate("/menu");
+      if (e.key === "profile") navigate("/customer/profile");
+      if (e.key === "contact") navigate("/contact");
+      if (e.key === "about-us") navigate("/about-us");
+      setVisible(false);
+    };
+
 
   // Grid data (preview)
   const preview = [
@@ -93,7 +97,7 @@ const CustomerHome = () => {
             // আগের “Menu” এর বদলে “Menu Items”
             { label: "Menu Items", key: "menu-items",  icon: <AppstoreOutlined /> },
             { label: "Specials",   key: "specials",    icon: <StarOutlined /> },
-            { label: "About Us",   key: "about",       icon: <InfoCircleOutlined /> },
+            { label: "About Us",   key: "about-us",       icon: <InfoCircleOutlined /> },
             { label: "Contact",    key: "contact",     icon: <MailOutlined /> },
           ]}
         />

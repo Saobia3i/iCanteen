@@ -6,7 +6,7 @@ import {
 } from "@mui/material";
 import { Add, Delete, Edit, Image } from "@mui/icons-material";
 import api from "../../lib/api";
- 
+ import BackButton from "../../components/BackButton";
 // local demo asset mapping (optional preview)
 import burger from "../../assets/burger.jpg";
 import fries from "../../assets/Fries.jpg";
@@ -113,6 +113,11 @@ export default function StaffMenu() {
     <Box sx={{ width: "100%", maxWidth: "1200px", mx: "auto" }}>
       {/* Create form */}
       <Card sx={{ mb: 3, border: "1px solid #ffd54f", backgroundColor: "rgba(255,255,255,0.9)" }}>
+        {/* Back button */}
+              <div className="absolute top-2 left-4 z-20">
+                <BackButton />
+              </div>
+        
         <CardHeader title="Add Menu Item" />
         <CardContent>
           <Box component="form" onSubmit={onCreate}>
