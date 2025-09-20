@@ -103,3 +103,82 @@ Clone the repository:
 ```bash
 git clone https://github.com/Saobia3i/iCanteen.git
 cd iCanteen/frontend
+
+Install frontend dependencies:
+
+npm install
+
+🏃‍♂️ Running the Application
+npm run dev
+
+
+Now open: http://localhost:5173
+
+For backend (Laravel):
+
+cd ../backend/laravel
+php artisan serve
+
+🧪 Usage
+
+Customers: Register/Login → Browse menu → Add to cart → Place order → Track status
+
+Staff: Login → View dashboard → Manage orders → Add menu items → View profile
+
+📁 Project Structure
+iCanteen/
+├── frontend/                # React + UI
+│   ├── src/
+│   │   ├── assets/          # Images, logos, background
+│   │   ├── auth/            # Login & Register
+│   │   ├── components/      # Shared components (Navbar, Footer, BackButton)
+│   │   ├── pages/
+│   │   │   ├── customer/    # Customer pages
+│   │   │   │   ├── CustomerHome.jsx
+│   │   │   │   ├── Menu.jsx
+│   │   │   │   ├── AboutUs.jsx
+│   │   │   │   └── Contact.jsx
+│   │   │   └── staff/       # Staff pages
+│   │   │       ├── StaffHome.jsx
+│   │   │       ├── Order.jsx
+│   │   │       ├── Shifts.jsx
+│   │   │       └── Profile.jsx
+│   │   ├── App.jsx
+│   │   └── index.js
+│   └── package.json
+└── backend/                 # Laravel backend
+    └── laravel/
+        ├── app/
+        ├── routes/
+        └── composer.json
+
+🤝 Contributing
+
+Contributions are welcome!
+
+Fork the repository
+
+Create a branch: git checkout -b feature/YourFeature
+
+Commit changes: git commit -m 'Add YourFeature'
+
+Push: git push origin feature/YourFeature
+
+Open a Pull Request
+
+👨‍💻 Team
+
+Mehrab Rahman — Frontend & React Developer
+
+Saobia Islam — Full-stack Developer (Laravel + React)
+
+[Add other members if any]
+
+📝 License
+
+This project is licensed under the MIT License.
+
+
+---
+
+👉 Do you want me to also add **screenshots / demo GIF sections** in the README (UI previews), so your GitHub repo looks more professional?
