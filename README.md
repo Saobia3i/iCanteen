@@ -166,13 +166,11 @@ Push: git push origin feature/YourFeature
 
 Open a Pull Request
 
-👨‍💻 Team
+👨‍💻
 
-Mehrab Rahman — Frontend & React Developer
+Saobia Islam — ID:20220204088
 
-Saobia Islam — Full-stack Developer (Laravel + React)
 
-[Add other members if any]
 
 📝 License
 
