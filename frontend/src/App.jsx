@@ -19,6 +19,7 @@ import Register from "./auth/Register.jsx";
 // Shared UI
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import GeminiChatWidget from "./components/GeminiChatWidget";
 
 import Menu from "./pages/customer/Menu";
 import AboutUs from "./pages/customer/AboutUs";
@@ -79,7 +80,9 @@ function AppShell() {
 
       {/* hide footer on /login, /register, /auth/* */}
       <HideOnAuth>
+        <GeminiChatWidget />
         <Footer />
+        
       </HideOnAuth>
     </div>
   );

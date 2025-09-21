@@ -7,15 +7,17 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\MenuItemController; // ✅ staff menu CRUD
 use App\Models\MenuItem;
 use App\Http\Controllers\ContactController;
-
+use App\Http\Controllers\GeminiProxyController;
 Route::get('/health', fn () => response()->json(['ok' => true]));
 
 // ================= AUTH =================
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login',    [AuthController::class, 'login']);
-Route::post('/contact', [ContactController::class, 'send'])
-    ->middleware('throttle:10,1');  // public contact mail
-Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/register', [AuthController::class, 'register']);
+    Route::post('/login',    [AuthController::class, 'login']);
+    Route::post('/contact', [ContactController::class, 'send'])
+        ->middleware('throttle:10,1');  
+    Route::post('/ai/chat', [GeminiProxyController::class, 'chat'])
+        ->middleware('throttle:30,1');
+    Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/me',      [UserController::class, 'me']);
     Route::put('/me',      [UserController::class, 'update']);

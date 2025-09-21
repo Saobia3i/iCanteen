@@ -25,7 +25,7 @@ export default function MenuItems({ loading, items, onAdd }) {
           <div key={m.id} className="card bg-base-100 shadow-md rounded-2xl overflow-hidden w-full lg:w-auto">
             <img src={img} alt={m.name} className="w-full h-48 object-cover" />
             <div className="p-4 text-center">
-              <h2 className="font-bold text-xl">{m.name}</h2>
+              <h2 className="font-bold text-[#111] text-xl">{m.name}</h2>
               <p className="text-[#737373] text-sm mt-2">{m.description}</p>
               <p className="text-[#212121] font-semibold mt-2">৳ {Number(m.price).toFixed(2)}</p>
 
