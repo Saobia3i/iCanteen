@@ -1,6 +1,6 @@
 // src/components/GeminiChatWidget.jsx
 import React, { useState, useMemo, useEffect } from "react";
-import api from "../lib/api"; // axios instance to 127.0.0.1:8000
+import api from "../lib/api"; 
 
 export default function GeminiChatWidget() {
   const [open, setOpen] = useState(false);
