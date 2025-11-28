@@ -20,7 +20,7 @@ import {
 import dash from "../../assets/dash.jpg";
 import bg from "../../assets/bg.jpg";
 import burger from "../../assets/burger.jpg";
-import fries from "../../assets/Fries.jpg";
+import drink1 from "../../assets/drink1.jpg";
 import pizza from "../../assets/pizza.jpg";
 import smoothie from "../../assets/smoothie.jpg";
 import aboutUs from "../../assets/about us.jpg";
@@ -46,7 +46,7 @@ const CustomerHome = () => {
   // Grid data (preview)
   const preview = [
     { img: burger,  title: "Burger",   desc: "Juicy and cheesy." },
-    { img: fries,   title: "Fries",    desc: "Crispy and golden." },
+    { img: drink1,   title: "Cold Drinks",    desc: "Cool Drink!." },
     { img: pizza,   title: "Pizza",    desc: "Hot and cheesy slices." },
     { img: smoothie,title: "Smoothie", desc: "Fresh fruit blends." },
   ];
