@@ -18,7 +18,7 @@ import {
 
 // Assets
 import dash from "../../assets/dash.jpg";
-import bg from "../../assets/bg.jpg";
+
 import burger from "../../assets/burger.jpg";
 import drink1 from "../../assets/drink1.jpg";
 import pizza from "../../assets/pizza.jpg";
@@ -55,11 +55,12 @@ const CustomerHome = () => {
     <div
       className="font-inter w-full"
       style={{
-        backgroundImage: `url(${bg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        minHeight: "100vh",
-      }}
+      backgroundImage: `url(https://ik.imagekit.io/ekb0d0it0/assets/bg.jpg)`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      minHeight: "100vh",
+}}
+
     >
       {/* Sidebar toggle button */}
       <Button

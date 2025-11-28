@@ -1,6 +1,6 @@
 // src/pages/customer/Contact.jsx
 import React, { useState } from "react";
-import ibg2 from "../../assets/ibg.png";
+
 import api from "../../lib/api";
 import { message } from "antd";
 import BackButton from "../../components/BackButton"
@@ -30,11 +30,14 @@ export default function Contact() {
     <div
       className="min-h-[100vh] w-full relative"
       
-      style={{
-        backgroundImage: `url(${ibg2})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+     style={{
+    backgroundImage: "url('https://ik.imagekit.io/ekb0d0it0/assets/ibg.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    minHeight: "100vh",
+  }}
+
       
     >
       {/* Back button */}
