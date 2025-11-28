@@ -6,7 +6,10 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['https://i-canteen.vercel.app'],
+    'allowed_origins' => [
+    'https://i-canteen-git-main-saobia3is-projects.vercel.app',
+    'http://localhost:5173',
+],
 
     'allowed_origins_patterns' => [],
 
