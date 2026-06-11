@@ -1,5 +1,5 @@
 // src/components/GeminiChatWidget.jsx
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 import api from "../lib/api"; 
 
 export default function GeminiChatWidget() {
@@ -28,12 +28,16 @@ export default function GeminiChatWidget() {
         { role: "user", parts: [{ text: `Scope: ${scope}.` }] },
         { role: "user", parts: [{ text }] },
       ];
-      const { data } = await api.post("/ai/chat", { messages });
+      const { data } = await api.post("/ai/chat", { prompt: text, messages });
       setThread((t) => [...t, { who: "ai", text: data?.reply || "(no reply)" }]);
     } catch (e) {
+      const message =
+        e.response?.data?.message ||
+        e.response?.data?.error ||
+        "Error contacting AI. Please try again.";
       setThread((t) => [
         ...t,
-        { who: "ai", text: "(Error contacting AI. Please try again.)" },
+        { who: "ai", text: `(${message})` },
       ]);
     } finally {
       setBusy(false);
@@ -127,7 +131,7 @@ export default function GeminiChatWidget() {
               onClick={send}
               disabled={busy}
               className="px-4 py-2 rounded-lg bg-amber-400 hover:bg-amber-500
-                         text-orrange font-semibold disabled:opacity-60"
+                         text-orange-950 font-semibold disabled:opacity-60"
             >
               {busy ? "Sending…" : "Send"}
             </button>

@@ -12,13 +12,17 @@ class SimpleCors
         $origin = $request->headers->get('Origin');
 
         // তোমার frontend dev origins allow করো:
-        $allowedOrigins = [
-            'http://localhost:5173',
-            'http://127.0.0.1:5173',
-        ];
+        $allowedOrigins = array_filter(array_map(
+            'trim',
+            explode(',', env('FRONTEND_URLS', 'http://localhost:5173,http://127.0.0.1:5173'))
+        ));
+
+        $allowOrigin = in_array($origin, $allowedOrigins, true)
+            ? $origin
+            : ($allowedOrigins[0] ?? '*');
 
         $headers = [
-            'Access-Control-Allow-Origin'      => in_array($origin, $allowedOrigins, true) ? $origin : $allowedOrigins[0],
+            'Access-Control-Allow-Origin'      => $allowOrigin,
             'Access-Control-Allow-Methods'     => 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
             'Access-Control-Allow-Headers'     => 'Content-Type, Authorization, X-Requested-With, Accept, Origin',
             'Access-Control-Expose-Headers'    => 'Authorization',

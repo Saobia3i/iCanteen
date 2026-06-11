@@ -10,8 +10,8 @@ class GeminiProxyController extends Controller
     public function chat(Request $request)
     {
         $validated = $request->validate([
-            'messages' => 'array',              // optional history: [{role, parts:[{text}]}]
-            'prompt'   => 'required|string',    // the user's latest message
+            'messages' => 'nullable|array',     // optional history: [{role, parts:[{text}]}]
+            'prompt'   => 'required_without:messages|string', // the user's latest message
             'system'   => 'nullable|string',    // optional system hint
             'model'    => 'nullable|string',    // e.g. gemini-1.5-flash
         ]);
@@ -35,10 +35,12 @@ class GeminiProxyController extends Controller
             // Expecting array like: [{role:"user"|"model", parts:[{text}]}]
             $contents = array_merge($contents, $validated['messages']);
         }
-        $contents[] = [
-            'role'  => 'user',
-            'parts' => [['text' => $validated['prompt']]],
-        ];
+        if (!empty($validated['prompt'])) {
+            $contents[] = [
+                'role'  => 'user',
+                'parts' => [['text' => $validated['prompt']]],
+            ];
+        }
 
         $url = "https://generativelanguage.googleapis.com/v1beta/models/{$model}:generateContent?key={$apiKey}";
 
