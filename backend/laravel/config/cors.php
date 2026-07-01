@@ -6,10 +6,9 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [
-    'https://i-canteen-git-main-saobia3is-projects.vercel.app',
-    'http://localhost:5173',
-],
+    'allowed_origins' => array_filter(
+        array_map('trim', explode(',', env('FRONTEND_URLS', 'http://localhost:5173')))
+    ),
 
     'allowed_origins_patterns' => [],
 
@@ -22,3 +21,4 @@ return [
     'supports_credentials' => false,
 
 ];
+
