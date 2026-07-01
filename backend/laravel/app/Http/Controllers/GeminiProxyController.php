@@ -16,9 +16,9 @@ class GeminiProxyController extends Controller
             'model'    => 'nullable|string',    // e.g. gemini-1.5-flash
         ]);
 
-        $apiKey = env('GEMINI_API_KEY');
+        $apiKey = config('services.gemini.key');
         if (!$apiKey) {
-            return response()->json(['message' => 'GEMINI_API_KEY missing'], 500);
+            return response()->json(['message' => 'GEMINI_API_KEY missing on server'], 500);
         }
 
         $model = $validated['model'] ?? 'gemini-1.5-flash';
