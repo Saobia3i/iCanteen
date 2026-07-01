@@ -1,4 +1,9 @@
-FROM composer:2 AS vendor
+FROM php:8.3-cli AS vendor
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends git unzip curl \
+    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
