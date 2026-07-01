@@ -61,20 +61,19 @@ export default function Menu() {
         if (!live) return;
         const apiItems = Array.isArray(res.data) ? res.data : [];
 
-        // STATIC_ITEMS + backend items = final list
-        const merged = [
-          ...STATIC_ITEMS,
-          ...apiItems.map((m) => ({
+        if (apiItems.length > 0) {
+          // API items আছে → শুধু DB items দেখাও (proper integer IDs)
+          setItems(apiItems.map((m) => ({
             ...m,
-            // ensure image_url filled (if backend sends only key)
             image_url: m.image_url || fallbackImage[m.image_key],
-          })),
-        ];
-
-        setItems(merged);
+          })));
+        } else {
+          // DB-তে কোনো item নেই → static fallback দেখাও
+          setItems(STATIC_ITEMS);
+        }
       })
       .catch(() => {
-        // backend fail করলে অন্তত static items দেখাবে
+        // backend fail করলে static items দেখাও
         setItems(STATIC_ITEMS);
         message.error("Failed to load menu, showing default items.");
       })

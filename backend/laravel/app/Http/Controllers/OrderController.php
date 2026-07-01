@@ -67,7 +67,7 @@ class OrderController extends Controller
                 'u.name as customer',
                 'u.email',
                 DB::raw('SUM(oi.qty * oi.price) as total'),
-                DB::raw("GROUP_CONCAT(CONCAT(mi.name,' x',oi.qty) SEPARATOR ', ') as items_list")
+                DB::raw("STRING_AGG(mi.name || ' x' || oi.qty::text, ', ') as items_list")
             )
             ->groupBy('o.id','o.status','o.created_at','u.name','u.email')
             ->orderByDesc('o.created_at')
