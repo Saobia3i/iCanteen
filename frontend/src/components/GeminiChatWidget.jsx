@@ -28,7 +28,11 @@ export default function GeminiChatWidget() {
         { role: "user", parts: [{ text: `Scope: ${scope}.` }] },
         { role: "user", parts: [{ text }] },
       ];
-      const { data } = await api.post("/ai/chat", { prompt: text, messages });
+      const { data } = await api.post("/ai/chat", {
+        prompt: text,
+        messages,
+        model: "gemini-3.5-flash",
+      });
       setThread((t) => [...t, { who: "ai", text: data?.reply || "(no reply)" }]);
     } catch (e) {
       const message =

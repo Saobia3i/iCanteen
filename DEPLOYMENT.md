@@ -22,10 +22,13 @@ For Render, Railway, or any Laravel host:
 ```env
 APP_URL=https://icanteen.onrender.com
 FRONTEND_URLS=https://i-canteen.vercel.app
+GEMINI_API_KEY=your_gemini_api_key
+GEMINI_MODEL=gemini-3.5-flash
 ```
 
 Notes:
 - `FRONTEND_URLS` must be the exact frontend origin, without a trailing slash.
+- Keep `GEMINI_API_KEY` only on the backend service. Do not add it to Vercel.
 - For multiple frontend domains, separate them with commas:
 
 ```env

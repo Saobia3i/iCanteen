@@ -13,7 +13,7 @@ class GeminiProxyController extends Controller
             'messages' => 'nullable|array',     // optional history: [{role, parts:[{text}]}]
             'prompt'   => 'required_without:messages|string', // the user's latest message
             'system'   => 'nullable|string',    // optional system hint
-            'model'    => 'nullable|string',    // e.g. gemini-1.5-flash
+            'model'    => 'nullable|string',    // e.g. gemini-3.5-flash
         ]);
 
         $apiKey = config('services.gemini.key');
@@ -21,7 +21,7 @@ class GeminiProxyController extends Controller
             return response()->json(['message' => 'GEMINI_API_KEY missing on server'], 500);
         }
 
-        $model = $validated['model'] ?? 'gemini-1.5-flash';
+        $model = $validated['model'] ?? config('services.gemini.model', 'gemini-3.5-flash');
 
         // Build contents
         $contents = [];
