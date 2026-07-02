@@ -21,7 +21,6 @@ import {
 import { Visibility, VisibilityOff, Save, Edit, Refresh, Email, BadgeOutlined } from "@mui/icons-material";
 import api from "../../lib/api";
 import bg from "../../assets/foodiebg.jpg"; 
-import BackButton from "../../components/BackButton"; // <-- your background
 // brand colors come from CSS vars you set earlier: --brand, --brand-600, --btn-fg
 
 export default function Profile() {
@@ -171,9 +170,6 @@ export default function Profile() {
 
       {/* Foreground content */}
       <Container maxWidth="md" sx={{ py: 6, position: "relative", zIndex: 1 }}>
-                <div className="absolute top-4 left-4 z-20">
-                <BackButton />
-              </div>
         <Card
           sx={{
             borderRadius: 3,

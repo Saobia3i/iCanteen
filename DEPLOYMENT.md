@@ -23,7 +23,8 @@ For Render, Railway, or any Laravel host:
 APP_URL=https://icanteen.onrender.com
 FRONTEND_URLS=https://i-canteen.vercel.app
 GEMINI_API_KEY=your_gemini_api_key
-GEMINI_MODEL=gemini-3.5-flash
+GEMINI_MODEL=gemini-2.5-flash
+GEMINI_FALLBACK_MODELS=gemini-3.5-flash
 ```
 
 Notes:

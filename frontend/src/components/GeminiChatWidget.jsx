@@ -23,15 +23,17 @@ export default function GeminiChatWidget() {
     setInput("");
     setBusy(true);
     try {
-      // Gemini expects Google-style contents:
-      const messages = [
-        { role: "user", parts: [{ text: `Scope: ${scope}.` }] },
-        { role: "user", parts: [{ text }] },
-      ];
       const { data } = await api.post("/ai/chat", {
         prompt: text,
-        messages,
-        model: "gemini-3.5-flash",
+        system: [
+          "You are iCanteen Assistant, a helpful chatbot for an institutional canteen management app.",
+          `The current user area is ${scope}.`,
+          "Answer simple greetings naturally.",
+          "Help with menu browsing, ordering, order status, staff tasks, profile help, and contact support.",
+          "Do not explain programming scopes, OAuth, APIs, or code unless the user clearly asks about technical development.",
+          "Keep replies short, friendly, and easy to understand.",
+        ].join(" "),
+        model: "gemini-2.5-flash",
       });
       setThread((t) => [...t, { who: "ai", text: data?.reply || "(no reply)" }]);
     } catch (e) {

@@ -7,6 +7,7 @@ import StaffLayout from "./pages/staff/StaffLayout";
 import StaffHome from "./pages/staff/StaffHome";
 import Order from "./pages/staff/Order";
 import Shifts from "./pages/staff/Shifts";
+import StaffMenu from "./pages/staff/StaffMenu";
 
 
 import CustomerProfile from "./pages/customer/Profile";
@@ -61,6 +62,7 @@ function AppShell() {
           <Route path="/staff" element={<StaffLayout />}>
             <Route index element={<StaffHome />} />
             <Route path="orders" element={<Order />} />
+            <Route path="menu" element={<StaffMenu />} />
             <Route path="shifts" element={<Shifts />} />
             <Route path="profile" element={<StaffProfile />} />
           </Route>

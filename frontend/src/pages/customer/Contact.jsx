@@ -3,7 +3,6 @@ import React, { useState } from "react";
 
 import api from "../../lib/api";
 import { message } from "antd";
-import BackButton from "../../components/BackButton"
 export default function Contact() {
   const [sending, setSending] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
@@ -40,12 +39,6 @@ export default function Contact() {
 
       
     >
-      {/* Back button */}
-      <div className="absolute top-4 left-4 z-20">
-        <BackButton />
-      </div>
-
-
       {/* DARK OVERLAY to dim the background image */}
       <div className="absolute inset-0 bg-black/45" />
           
