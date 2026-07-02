@@ -7,7 +7,7 @@ Set these environment variables in the deployed services before building or rede
 For Vercel or any static frontend host:
 
 ```env
-VITE_API_URL=https://your-backend-domain.com/api
+VITE_API_URL=https://icanteen.onrender.com/api
 ```
 
 Notes:
@@ -20,8 +20,8 @@ Notes:
 For Render, Railway, or any Laravel host:
 
 ```env
-APP_URL=https://your-backend-domain.com
-FRONTEND_URLS=https://your-frontend-domain.vercel.app
+APP_URL=https://icanteen.onrender.com
+FRONTEND_URLS=https://i-canteen.vercel.app
 ```
 
 Notes:
@@ -29,7 +29,7 @@ Notes:
 - For multiple frontend domains, separate them with commas:
 
 ```env
-FRONTEND_URLS=https://your-frontend-domain.vercel.app,https://www.your-custom-domain.com
+FRONTEND_URLS=https://i-canteen.vercel.app,https://www.your-custom-domain.com
 ```
 
 ## Quick Test
@@ -37,7 +37,7 @@ FRONTEND_URLS=https://your-frontend-domain.vercel.app,https://www.your-custom-do
 Open this in the browser:
 
 ```text
-https://your-backend-domain.com/api/health
+https://icanteen.onrender.com/api/health
 ```
 
 Expected response:
