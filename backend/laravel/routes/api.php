@@ -13,10 +13,8 @@ Route::get('/health', fn () => response()->json(['ok' => true]));
 // ================= AUTH =================
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/login',    [AuthController::class, 'login']);
-    Route::post('/contact', [ContactController::class, 'send'])
-        ->middleware('throttle:10,1');  
-    Route::post('/ai/chat', [GeminiProxyController::class, 'chat'])
-        ->middleware('throttle:30,1');
+    Route::post('/contact', [ContactController::class, 'send']);
+    Route::post('/ai/chat', [GeminiProxyController::class, 'chat']);
     Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/me',      [UserController::class, 'me']);
