@@ -1,7 +1,14 @@
 import axios from "axios";
 
+const normalizeApiUrl = (url) => url?.replace(/\/+$/, "");
+const apiBaseUrl = normalizeApiUrl(import.meta.env.VITE_API_URL);
+
+if (!apiBaseUrl) {
+  throw new Error("Missing VITE_API_URL. Set it to your deployed backend URL ending with /api.");
+}
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api",
+  baseURL: apiBaseUrl,
 });
 
 // প্রতিটা request-এ localStorage থেকে token পড়ে header-এ attach করো

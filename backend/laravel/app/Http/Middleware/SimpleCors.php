@@ -17,18 +17,21 @@ class SimpleCors
             explode(',', env('FRONTEND_URLS', 'http://localhost:5173,http://127.0.0.1:5173'))
         ));
 
-        $allowOrigin = in_array($origin, $allowedOrigins, true)
+        $allowOrigin = $origin && in_array($origin, $allowedOrigins, true)
             ? $origin
-            : ($allowedOrigins[0] ?? '*');
+            : null;
 
         $headers = [
-            'Access-Control-Allow-Origin'      => $allowOrigin,
             'Access-Control-Allow-Methods'     => 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
             'Access-Control-Allow-Headers'     => 'Content-Type, Authorization, X-Requested-With, Accept, Origin',
             'Access-Control-Expose-Headers'    => 'Authorization',
             'Access-Control-Allow-Credentials' => 'true',
             'Vary'                              => 'Origin',
         ];
+
+        if ($allowOrigin) {
+            $headers['Access-Control-Allow-Origin'] = $allowOrigin;
+        }
 
         // Preflight (OPTIONS) হলে তৎক্ষণাৎ 204 রিটার্ন করো
         if ($request->getMethod() === 'OPTIONS') {
